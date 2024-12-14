@@ -1,0 +1,12 @@
+Source: ros-humble-foxglove-compressed-video-transport
+Section: misc
+Priority: optional
+Maintainer: Bernd Pfrommer <bernd.pfrommer@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), ros-humble-ament-cmake, ros-humble-ament-cmake-clang-format <!nocheck>, ros-humble-ament-cmake-ros, ros-humble-ament-lint-auto <!nocheck>, ros-humble-ament-lint-common <!nocheck>, ros-humble-ffmpeg-encoder-decoder, ros-humble-foxglove-msgs, ros-humble-image-transport, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rcutils, ros-humble-ros-environment, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-ros-workspace, ros-humble-rosidl-typesupport-fastrtps-c, ros-humble-rosidl-typesupport-fastrtps-cpp
+Homepage: http://www.ros.org/wiki/image_transport_plugins
+Standards-Version: 3.9.2
+
+Package: ros-humble-foxglove-compressed-video-transport
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-humble-ffmpeg-encoder-decoder, ros-humble-foxglove-msgs, ros-humble-image-transport, ros-humble-pluginlib, ros-humble-rclcpp, ros-humble-rcutils, ros-humble-sensor-msgs, ros-humble-std-msgs, ros-humble-ros-workspace
+Description: foxglove_compressed_video_transport provides a plugin to image_transport for transparently sending an image stream encoded in foxglove compressed video packets.
