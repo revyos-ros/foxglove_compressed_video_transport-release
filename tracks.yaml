@@ -1,3 +1,4 @@
+release_repo_url: git@github.com:revyos-ros/foxglove_compressed_video_transport-release.git
 tracks:
   humble:
     actions:
