@@ -47,6 +47,11 @@ static const ParameterDefinition params[] = {
                          .set__description("ffmpeg encoder delay")
                          .set__read_only(false)},
   {ParameterValue(""), ParameterDescriptor()
+                         .set__name("crf")
+                         .set__type(rcl_interfaces::msg::ParameterType::PARAMETER_STRING)
+                         .set__description("ffmpeg encoder crf")
+                         .set__read_only(false)},
+  {ParameterValue(""), ParameterDescriptor()
                          .set__name("pixel_format")
                          .set__type(rcl_interfaces::msg::ParameterType::PARAMETER_STRING)
                          .set__description("pixel format to use for encoding")
@@ -127,6 +132,8 @@ void Publisher::declareParameter(
     encoder_.setTune(v.get<std::string>());
   } else if (n == "delay") {
     encoder_.setDelay(v.get<std::string>());
+  } else if (n == "crf") {
+    encoder_.setCRF(v.get<std::string>());
   } else if (n == "pixel_format") {
     encoder_.setPixelFormat(v.get<std::string>());
   } else if (n == "qmax") {
@@ -199,8 +206,8 @@ rmw_qos_profile_t Publisher::initialize(
 void Publisher::publish(const Image & msg, const PublishFn & publish_fn) const
 {
   Publisher * me = const_cast<Publisher *>(this);
+  me->publishFunction_ = &publish_fn;
   if (!me->encoder_.isInitialized()) {
-    me->publishFunction_ = &publish_fn;
     if (!me->encoder_.initialize(
           msg.width, msg.height,
           std::bind(&Publisher::packetReady, me, _1, _2, _3, _4, _5, _6, _7, _8, _9))) {
