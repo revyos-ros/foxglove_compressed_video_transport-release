@@ -1,0 +1,33 @@
+ros-jazzy-foxglove-compressed-video-transport (1.0.3-1bookworm) bookworm; urgency=high
+
+  * avoid ament_target_dependencies
+  * Add Constant Rate Factor,  Co-authored-by: Angsa Deployment Team <mailto:team@angsa-robotics.com>
+  * Update README.md
+  * Contributors: Bernd Pfrommer, Tony Najjar
+
+ -- Bernd Pfrommer <bernd.pfrommer@gmail.com>  Mon, 26 May 2025 00:00:00 -0000
+
+ros-jazzy-foxglove-compressed-video-transport (1.0.2-1bookworm) bookworm; urgency=high
+
+  * Merge branch 'master' into release
+  * Fix segfault: the publish_fn address passed to publish() cannot be cached!
+  * Contributors: Michal Sojka
+
+ -- Bernd Pfrommer <bernd.pfrommer@gmail.com>  Sun, 30 Mar 2025 00:00:00 -0000
+
+ros-jazzy-foxglove-compressed-video-transport (1.0.1-1bookworm) bookworm; urgency=high
+
+  * Fill empty message fields (#1 <https://github.com/ros-misc-utilities/foxglove_compressed_video_transport/issues/1>)
+    * Fix missing timestamp and frame_id in subscriber and publisher
+  * Contributors: Bernd Pfrommer, eLEcTRiCZiTy
+
+ -- Bernd Pfrommer <bernd.pfrommer@gmail.com>  Mon, 18 Nov 2024 00:00:00 -0000
+
+ros-jazzy-foxglove-compressed-video-transport (1.0.0-1bookworm) bookworm; urgency=high
+
+  * initial commit
+  * Contributors: Bernd Pfrommer
+
+ -- Bernd Pfrommer <bernd.pfrommer@gmail.com>  Mon, 16 Sep 2024 00:00:00 -0000
+
+
